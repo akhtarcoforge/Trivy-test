@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         APP_NAME = "trivy-new"
-        APP_VERSION = "$1"
+        IMAGE_VERSION = ${IMAGE_TAG}
     }
 
     stages { 
@@ -15,7 +15,7 @@ pipeline {
         
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t $APP_NAME:latest .'
+                sh 'docker build -t $APP_NAME:$IMAGE_VERSION .'
             }
         }
         
@@ -23,7 +23,7 @@ pipeline {
             steps {
                 script {
                     // Run Trivy to scan the Docker image
-                    def trivyOutput = sh(script: "trivy image --severity CRITICAL $APP_NAME:$APP_VERSION", returnStdout: true).trim()
+                    def trivyOutput = sh(script: "trivy image --severity CRITICAL $APP_NAME:$IMAGE_VERSION", returnStdout: true).trim()
 
                     // Display Trivy scan results
                     println trivyOutput
