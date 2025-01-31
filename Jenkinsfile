@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         APP_NAME = "trivy"
+        IMAGE_VERSION = ""
     }
 
     stages { 
