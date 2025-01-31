@@ -23,7 +23,7 @@ pipeline {
             steps {
                 script {
                     // Run Trivy to scan the Docker image
-                    def trivyOutput = sh(script: "trivy image --severity CRITICAL $APP_NAME:$IMAGE_VERSION", returnStdout: true).trim()
+                    def trivyOutput = sh(script: "trivy image --severity CRITICAL $APP_NAME:${IMAGE_VERSION}", returnStdout: true).trim()
 
                     // Display Trivy scan results
                     println trivyOutput
