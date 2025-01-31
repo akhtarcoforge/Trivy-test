@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         APP_NAME = "trivy"
-        IMAGE_VERSION = "${IMAGE_VERSION}"
+        IMAGE_VERSION = "${IMAGE_VERSION}" //THIS VALUE IS CALLED IN PARAMETERISED JOB//
     }
 
     stages { 
