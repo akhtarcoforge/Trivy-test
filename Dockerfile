@@ -1,27 +1,15 @@
 
-# Base Image
+FROM python:3.9-slim
 
-FROM node:lts-alpine3.17
-
-# Set the working Directory
+# Set the working directory in the container
 WORKDIR /app
 
-# Copy Package.json
+# Copy the current directory contents into the container at /app
+COPY . /app
 
-COPY package*.json ./
+# Install any needed dependencies specified in requirements.txt
 
-# Install Dependencies
+# Make port 8080 available to the world outside this container
+EXPOSE 8080
 
-RUN npm install
-
-# Copy source code to the container work directory
-
-COPY . .
-
-# Expose Port
-
-EXPOSE 3000
-
-# Entry for CMD 
-
-CMD [ "node", "server.js" ]
+CMD ["python", "app.py"]
