@@ -2,8 +2,8 @@ pipeline {
     agent any 
 
     environment {
-        APP_NAME = "trivy-new"
-        IMAGE_VERSION = $IMAGE_TAG
+        APP_NAME = "trivy"
+        IMAGE_VERSION = $IMAGE_VERSION
     }
 
     stages { 
