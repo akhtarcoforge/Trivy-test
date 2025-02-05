@@ -1,6 +1,6 @@
-ARG IMAGE_VERSION
-FROM python:3.9-slim
-
+#ARG IMAGE_VERSION
+#FROM python:3.9-slim
+FROM python:latest
 # Set the working directory in the container
 WORKDIR /app
 
