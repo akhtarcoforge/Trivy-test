@@ -1,5 +1,5 @@
 #ARG IMAGE_VERSION
-FROM python:3.9-slim
+FROM python:3.4-alpine
 #FROM python:3.0
 #FROM alpine:3.13
 # Set the working directory in the container
