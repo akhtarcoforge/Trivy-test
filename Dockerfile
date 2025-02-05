@@ -1,6 +1,7 @@
 #ARG IMAGE_VERSION
 #FROM python:3.9-slim
-FROM python:3.0
+#FROM python:3.0
+FROM alpine:3.11
 # Set the working directory in the container
 WORKDIR /app
 
