@@ -18,7 +18,7 @@ pipeline {
                 sh 'docker build -t $APP_NAME:$IMAGE_VERSION .'
             }
         }
-        stage('Update Trivy database') {
+        stage('Update Trivy Database') {
 
             steps {
 
