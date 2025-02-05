@@ -22,7 +22,7 @@ pipeline {
 
             steps {
 
-                sh 'trivy --download-db'
+                sh 'trivy image --download-db-only'
 
             }
 
